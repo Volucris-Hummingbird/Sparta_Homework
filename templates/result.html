@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게임 결과</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <h1>Game Results</h1>
+    <table>
+        <tr>
+            <th>Player Choice</th>
+            <th>Computer Choice</th>
+            <th>Result</th>
+        </tr>
+        {% for record in game_records %}
+        <tr>
+            <td>{{ record.player_choice }}</td>
+            <td>{{ record.computer_choice }}</td>
+            <td>{{ record.result }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{{ url_for('index') }}">Back to Game</a>
+</body>
+
+</html>
